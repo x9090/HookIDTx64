@@ -304,6 +304,7 @@ VOID hookInterrupt(PVOID newHandler, ULONG number, PUINT_PTR oldHandler)
 
     UNREFERENCED_PARAMETER(newHandler);
 
+    __debugbreak();
     __sidt((void*)&idtRegister);
     idt = idtRegister.InterruptDescriptorTable;
 
